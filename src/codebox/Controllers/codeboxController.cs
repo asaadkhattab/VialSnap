@@ -8,14 +8,9 @@ namespace codebox.Controllers
 {
     public class codeboxController : Controller
     {
-        public ActionResult Detail()
+        public ActionResult Template()
         {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
-            {
-                return Redirect("/");
-           
-            }
-            return Content("Hello world");
+            return View();
         }
     }
 }
