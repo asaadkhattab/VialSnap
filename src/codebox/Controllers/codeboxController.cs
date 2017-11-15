@@ -8,5 +8,9 @@ namespace codebox.Controllers
 {
     public class codeboxController : Controller
     {
+        public string Home()
+        {
+            return "hello world";
+        }
     }
 }
