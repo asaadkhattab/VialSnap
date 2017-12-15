@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  vialsnap:
+    image: vialsnap
+    build:
+      context: .
+      dockerfile: vialsnap\Dockerfile
