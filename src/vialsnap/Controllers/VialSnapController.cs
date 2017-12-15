@@ -9,5 +9,9 @@ namespace vialsnap.Controllers
 {
     public class VialSnapController : Controller
     {
+        public string Detail()
+        {
+            return "VialSnap Controller";
+        }
     }
 }
