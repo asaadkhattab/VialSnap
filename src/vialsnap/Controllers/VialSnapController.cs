@@ -9,9 +9,9 @@ namespace vialsnap.Controllers
 {
     public class VialSnapController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "VialSnap Controller";
+            return Content("Hey!");
         }
     }
 }
