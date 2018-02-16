@@ -8,5 +8,9 @@ namespace Portal.Controllers
 {
     public class PortalController : Controller
     {
+        public string Detail()
+        {
+            return "Hello from Portal Controller";
+        }
     }
 }
