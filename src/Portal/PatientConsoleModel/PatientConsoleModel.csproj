@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Models\Basic.cs" />
     <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientPhysician.cs" />
+    <Compile Include="Models\Physician.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
