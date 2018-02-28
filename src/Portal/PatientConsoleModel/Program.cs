@@ -16,7 +16,7 @@ namespace PatientConsoleModel
             {
                 var basic = new Basic()
                 {
-                    Title = "Asaad"
+                    Title = "Asaads"
                 };
 
                 var basic2 = new Basic()
