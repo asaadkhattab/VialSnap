@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="Models\Basic.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PatientPhysician.cs" />
