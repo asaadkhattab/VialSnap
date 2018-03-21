@@ -8,7 +8,7 @@ namespace Portal.Controllers
 {
     public class PortalController : Controller
     {
-        public ActionResult Detail()
+        public ActionResult Index()
         {
             return View();
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace PatientConsoleModel
 {
@@ -14,16 +15,27 @@ namespace PatientConsoleModel
         {
             using (var context = new Context())
             {
+
+                context.Database.Log = (message) => Debug.WriteLine(message);
+
   
-                //Retrieve all patients from database
+ 
+    
                 var patients = context.Patients
                     .Include(p => p.Basic)
-                    .Include(p => p.Physicians.Select(phys=> phys.Physician))
-                    .Include(p => p.Physicians.Select(phys=> phys.Role))
+                    .Include(p => p.Physicians.Select(phys => phys.Physician))
+                    .Include(p => p.Physicians.Select(phys => phys.Role))
                     .ToList();
 
                 foreach (var patient in patients)
                 {
+
+                    if (patient.Basic == null)
+                    {
+                        context.Entry(patient)
+                            .Reference(p => p.Basic)
+                            .Load();
+                    }
                     var physicianRoleNames = patient.Physicians
                         .Select(phys => $"{phys.Physician.Name} - {phys.Role.Name}").ToList();
                     var physicianRoleDisplayText = string.Join(", ", physicianRoleNames);

@@ -1,0 +1,74 @@
+﻿@model PatientConsoleModel.Models.Patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Basic.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Basic.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientBirthDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientBirthDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientWeight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PatientId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
