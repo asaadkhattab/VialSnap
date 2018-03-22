@@ -1,0 +1,34 @@
+﻿@model Portal.Models.PharmacyViewModel
+
+@{
+    ViewBag.Title = "Pharmacy Detail";
+}
+
+<h2>@Model.PharmacyInfo</h2>
+
+<div class="row">
+    <!--Pharmacy Name-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.Name)
+        <br />@Html.DisplayFor(m => m.Name)
+    </div>
+
+    <!--Pharmacy State-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.State)
+        <br />@Html.DisplayFor(m => m.State)
+    </div>
+
+    <!--Pharmacy City-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.City)
+        <br />@Html.DisplayFor(m => m.City)
+    </div>
+
+    <!--Pharmacy ZipCode-->
+
+    <div class="col-sm-12">
+        @Html.ActionLink("Done", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
