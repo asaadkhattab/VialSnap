@@ -1,0 +1,59 @@
+﻿
+@model Portal.Models.PatientViewModel
+
+@{
+    ViewBag.Title = "Patient Detail";
+}
+
+
+<h2>@Model.FirstName</h2>
+
+<div class="row">
+    <!--Prefix-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.Prefix)
+        <br />@Html.DisplayFor(m => m.Prefix)
+    </div>
+
+    <!--First Name-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.FirstName)
+        <br />@Html.DisplayFor(m => m.FirstName)
+    </div>
+
+    <!--Middle Name-->
+
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.MiddleName)
+        <br />@Html.DisplayFor(m => m.MiddleName)
+    </div>
+
+    <!--Last Name-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.LastName)
+        <br />@Html.DisplayFor(m => m.LastName)
+    </div>
+
+    <!--Suffix Name-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.Suffix)
+        <br />@Html.DisplayFor(m => m.Suffix)
+    </div>
+
+    <!--Account Balance-->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.AccountBalance)
+        <br />@Html.DisplayFor(m => m.AccountBalance)
+    </div>
+
+
+    <!--Medication -->
+    <div class="col-sm-12 form-group">
+        @Html.LabelFor(m => m.Medication)
+        <br />@Html.DisplayFor(m => m.Medication.Name)
+    </div>
+
+    <div class="col-sm-12">
+        @Html.ActionLink("Done", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</div>

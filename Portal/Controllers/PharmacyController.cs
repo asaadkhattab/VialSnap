@@ -28,7 +28,7 @@ namespace Portal.Controllers
                 pharmacyList.TotalPharmacies = pharmacyList.Pharmacies.Count;
                 return View(pharmacyList);
             }
-            
+
         }
 
         //PHARMACY DETAIL 
@@ -98,7 +98,7 @@ namespace Portal.Controllers
                     return View("AddEditPharmacy", pharmacyViewModel);
                 }
             }
-                return new HttpNotFoundResult();
+            return new HttpNotFoundResult();
         }
 
 
@@ -140,6 +140,79 @@ namespace Portal.Controllers
                 }
             }
             return new HttpNotFoundResult();
+        }
+
+
+
+
+
+        //Manage Controlled Substances
+        public ActionResult ManageControlledSubstances(int id)
+        {
+            using (var portalContext = new PortalContext())
+            {
+                var pharmacy = portalContext.Pharmacies.Include("MedControlledSubstances").SingleOrDefault(p => p.PharmacyId == id);
+
+                if (pharmacy == null)
+                    return new HttpNotFoundResult();
+
+                var pharmacyViewModel = new PharmacyViewModel
+                {
+                    PharmacyId = pharmacy.PharmacyId,
+                    Name = pharmacy.Name,
+                    City = pharmacy.City,
+                    State = pharmacy.State
+                };
+
+                foreach (var medication in portalContext.Medications.ToList())
+                {
+                    var currentSchedule = pharmacy.MedControlledSubstances.SingleOrDefault(mcss => mcss.MedicationId == medication.MedicationId)?.Schedule;
+
+                    pharmacyViewModel.MedControlledSubstances.Add(new MedControlledSubstanceViewModel
+                    {
+                        Medication = new MedicationViewModel { MedicationId = medication.MedicationId, Name = medication.Name},
+                        Schedule = currentSchedule ?? -1
+                    });
+                }
+                return View(pharmacyViewModel);
+            }
+        }
+
+        //Edit Controlled Suubstance
+        [HttpPost]
+        public ActionResult EditControlledSubstances(PharmacyViewModel pharmacyViewModel)
+        {
+            using (var portalContext = new PortalContext())
+            {
+                var pharmacy = portalContext.Pharmacies.Include("MedControlledSubstances").SingleOrDefault(p => p.PharmacyId == pharmacyViewModel.PharmacyId);
+
+                if (pharmacy == null)
+                    return new HttpNotFoundResult();
+
+                foreach (var medControlledSubstance in pharmacyViewModel.MedControlledSubstances)
+                {
+                    if (medControlledSubstance.Schedule != -1)
+                    {
+                        var existingMedControlledSubstance = pharmacy.MedControlledSubstances.SingleOrDefault(mcss => mcss.MedicationId == medControlledSubstance.Medication.MedicationId);
+                        if (existingMedControlledSubstance != null)
+                        {
+                            existingMedControlledSubstance.Schedule = medControlledSubstance.Schedule;
+                        }
+                        else
+                        {
+                            pharmacy.MedControlledSubstances.Add(new MedControlledSubstance
+                            {
+                                MedicationId = medControlledSubstance.Medication.MedicationId.Value,
+                                Schedule = medControlledSubstance.Schedule
+                            });
+                        }
+                    }
+                }
+
+                portalContext.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
         }
     }
 }

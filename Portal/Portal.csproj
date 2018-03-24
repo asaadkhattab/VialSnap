@@ -151,6 +151,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\PharmacyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,7 +160,26 @@
     <Compile Include="Migrations\201803220134359_InitialMigration.Designer.cs">
       <DependentUpon>201803220134359_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803220301422_MedicationAndPatients.cs" />
+    <Compile Include="Migrations\201803220301422_MedicationAndPatients.Designer.cs">
+      <DependentUpon>201803220301422_MedicationAndPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803241802546_ControlledSubstances.cs" />
+    <Compile Include="Migrations\201803241802546_ControlledSubstances.Designer.cs">
+      <DependentUpon>201803241802546_ControlledSubstances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803242044224_ControlledSubstances1.cs" />
+    <Compile Include="Migrations\201803242044224_ControlledSubstances1.Designer.cs">
+      <DependentUpon>201803242044224_ControlledSubstances1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MedControlledSubstance.cs" />
+    <Compile Include="Models\MedControlledSubstanceViewModel.cs" />
+    <Compile Include="Models\Medication.cs" />
+    <Compile Include="Models\MedicationViewModel.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientListViewModel.cs" />
+    <Compile Include="Models\PatientViewModel.cs" />
     <Compile Include="Models\Pharmacy.cs" />
     <Compile Include="Models\PharmacyListViewModel.cs" />
     <Compile Include="Models\PharmacyViewModel.cs" />
@@ -206,6 +226,10 @@
     <Content Include="Views\Pharmacy\Index.cshtml" />
     <Content Include="Views\Pharmacy\PharmacyDetail.cshtml" />
     <Content Include="Views\Pharmacy\AddEditPharmacy.cshtml" />
+    <Content Include="Views\Patient\Index.cshtml" />
+    <Content Include="Views\Patient\PatientDetail.cshtml" />
+    <Content Include="Views\Patient\AddEditPatient.cshtml" />
+    <Content Include="Views\Pharmacy\ManageControlledSubstances.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -226,6 +250,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803220134359_InitialMigration.resx">
       <DependentUpon>201803220134359_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803220301422_MedicationAndPatients.resx">
+      <DependentUpon>201803220301422_MedicationAndPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803241802546_ControlledSubstances.resx">
+      <DependentUpon>201803241802546_ControlledSubstances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803242044224_ControlledSubstances1.resx">
+      <DependentUpon>201803242044224_ControlledSubstances1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

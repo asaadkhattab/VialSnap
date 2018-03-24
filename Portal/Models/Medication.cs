@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace Portal.Models
 {
-    public class Pharmacy
+    public class Medication
     {
-
-        public Pharmacy()
+        public Medication()
         {
-            //Navigation Property
             MedControlledSubstances = new HashSet<MedControlledSubstance>();
         }
 
-        public int PharmacyId { get; set; }
+        public int MedicationId { get; set; }
 
         public string Name { get; set; }
 
-        public string State { get; set; }
-
-        public string City { get; set; }
-        
         public virtual ICollection<MedControlledSubstance> MedControlledSubstances { get; set; }
     }
 }

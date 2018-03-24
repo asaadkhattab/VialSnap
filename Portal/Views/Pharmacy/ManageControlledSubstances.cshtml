@@ -1,0 +1,88 @@
+﻿@model Portal.Models.PharmacyViewModel
+
+@{
+    ViewBag.Title = Model.PharmacyInfo + "Controlled Substances";
+}
+
+<h2>@Model.Name</h2>
+
+@using (Html.BeginForm("EditControlledSubstances", "Pharmacy", "POST"))
+{
+    @Html.HiddenFor(m => m.PharmacyId)
+
+    <div class="col-xs-12">
+        <button type="submit" class="btn btn-primary">Save</button>
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+        <hr />
+    </div>
+
+    for (var i = 0; i < Model.MedControlledSubstances.Count; i++)
+    {
+        @Html.HiddenFor(m => m.MedControlledSubstances[i].Medication.MedicationId)
+
+        var selectedValue = Model.MedControlledSubstances.FirstOrDefault(mcss => mcss.Medication.MedicationId == Model.MedControlledSubstances[i].Medication.MedicationId)?.Schedule;
+
+        <div class="col-sm-4">
+            <div id="prefPanel@(i)" class="panel panel-default">
+                <div class="panel-heading">
+                    @Model.MedControlledSubstances[i].Medication.Name
+                </div>
+                <div class="panel-body">
+                    @Html.TextBoxFor(m => m.MedControlledSubstances[i].Schedule, new { @type = "range", min = Model.MedControlledSubstances[i].Schedule == -1 ? "-1" : "0", max = "5", step = "1" })
+                    <div style="text-align: center;">
+                        <span id="prefDescription@(i)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+<script type="text/javascript">
+				function setPrefDescription(index) {
+					var prefDescriptionLabel = document.getElementById("prefDescription" + index);
+					var prefPanel = document.getElementById("prefPanel" + index);
+                    var prefSliderValue = parseInt(document.getElementById("MedControlledSubstances_" + index + "__Schedule").value);
+
+					switch (prefSliderValue) {
+						case -1:
+							prefDescriptionLabel.innerHTML = "Not set";
+							prefDescriptionLabel.className = "";
+							prefPanel.className = "panel panel-default";
+							break;
+						case 0:
+							prefDescriptionLabel.innerHTML = "I";
+							prefDescriptionLabel.className = "text-danger";
+							prefPanel.className = "panel panel-danger";
+							break;
+						case 1:
+							prefDescriptionLabel.innerHTML = "II";
+							prefDescriptionLabel.className = "text-warning";
+							prefPanel.className = "panel panel-warning";
+							break;
+						case 2:
+							prefDescriptionLabel.innerHTML = "III";
+							prefDescriptionLabel.className = "text-warning";
+							prefPanel.className = "panel panel-warning";
+							break;
+						case 3:
+							prefDescriptionLabel.innerHTML = "IIII";
+							prefDescriptionLabel.className = "text-info";
+							prefPanel.className = "panel panel-info";
+							break;
+						case 4:
+							prefDescriptionLabel.innerHTML = "IV";
+							prefDescriptionLabel.className = "text-success";
+							prefPanel.className = "panel panel-success";
+							break;
+					}
+				}
+
+				@for (var i = 0; i < Model.MedControlledSubstances.Count; i++)
+                {
+					<text>
+    document.getElementById("MedControlledSubstances_@(i)__Schedule").oninput = function () { setPrefDescription(@i) };
+					setPrefDescription(@i);
+					</text>
+				}
+</script>

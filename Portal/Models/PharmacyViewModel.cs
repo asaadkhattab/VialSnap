@@ -1,9 +1,16 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+
 
 namespace Portal.Models
 {
     public class PharmacyViewModel
     {
+        public PharmacyViewModel()
+        {
+            MedControlledSubstances = new List<MedControlledSubstanceViewModel>();
+        }
+
         public int? PharmacyId { get; set; }
 
         [DisplayName("Name: ")]
@@ -16,6 +23,9 @@ namespace Portal.Models
         [DisplayName("State: ")]
         public string State { get; set; }
 
+        [DisplayName("Pharmacy Info: ")]
         public string PharmacyInfo => Name + " at " + City + "," + " " + State; 
+
+        public List<MedControlledSubstanceViewModel> MedControlledSubstances { get; set; }
     }
 }

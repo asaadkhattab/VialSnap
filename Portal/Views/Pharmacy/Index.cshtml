@@ -21,25 +21,26 @@
             <td>
                 @Html.ActionLink("Detail", "PharmacyDetail", new { id = Model.Pharmacies[i].PharmacyId })
                 | @Html.ActionLink("Edit", "PharmacyEdit", new { id = Model.Pharmacies[i].PharmacyId })
+                | @Html.ActionLink("Controlled Substances", "ManageControlledSubstances", new { id = Model.Pharmacies[i].PharmacyId })
                 | <a data-toggle="modal" href="@("#deletePharmacyModal" + i)">Delete</a>
                 <div class="modal fade" id="@("deletePharmacyModal" + i)" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             @using (Html.BeginForm("DeletePharmacy", "Pharmacy"))
-                        {
-                            <input type="hidden" value="@Model.Pharmacies[i].PharmacyId" name="PharmacyId" />
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Delete @Model.Pharmacies[i].PharmacyInfo</h4>
-                            </div>
-                            <div class="modal-body">
-                                Are you sure you want to delete @Model.Pharmacies[i].PharmacyInfo?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Yes</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            </div>
-                    }
+                {
+                    <input type="hidden" value="@Model.Pharmacies[i].PharmacyId" name="PharmacyId" />
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Delete @Model.Pharmacies[i].PharmacyInfo</h4>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete @Model.Pharmacies[i].PharmacyInfo?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Yes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+    }
                         </div>
                     </div>
                 </div>
