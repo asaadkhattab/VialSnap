@@ -1,4 +1,5 @@
 ﻿@model Portal.Models.PatientViewModel
+
 @{
     var isEditMode = Model.PatientId != null;
     ViewBag.Title = isEditMode ? "Edit " + Model.FirstName : "Add Patient";
@@ -9,18 +10,62 @@
 <div class="row">
     <div class="col-sm-6 col-xs-10">
         @using (Html.BeginForm(isEditMode ? "EditPatient" : "AddPatient", "Patient"))
-        {
-            @Html.HiddenFor(m => m.PatientId)
-            <div class="form-group">
-                @Html.LabelFor(m => m.FirstName)
-                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                <label for="Medication_MedicationId">Medication</label>
-                @Html.DropDownListFor(m => m.Medication.MedicationId, ViewBag.Medications as IEnumerable<SelectListItem>, new { @class = "form-control" })
-            </div>
-            <button type="submit" class="btn btn-primary">@(isEditMode ? "Save" : "Add")</button>
-            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
-        }
+    {
+        @Html.HiddenFor(m => m.PatientId)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Prefix)
+            @Html.TextBoxFor(m => m.Prefix, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Prefix, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.MiddleName)
+            @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.MiddleName, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Suffix)
+            @Html.TextBoxFor(m => m.Suffix, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Suffix, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.AccountBalance)
+            @Html.TextBoxFor(m => m.AccountBalance, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.AccountBalance, null, new { @class = "text-danger" })
+        </div>
+
+
+        <div class="form-group">
+            <label for="Medication_MedicationId">Medication</label>
+            @Html.DropDownListFor(m => m.Medication.MedicationId, ViewBag.Medications as IEnumerable<SelectListItem>, "Select a Medication", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Medication.MedicationId, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <label for="Pharmacy_PharmacyId">Pharmacy</label>
+            @Html.DropDownListFor(m => m.Pharmacy.MedicationId, ViewBag.Pharmacies as IEnumerable<SelectListItem>, "Select Pharmacy", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Pharmacy.MedicationId, null, new { @class = "text-danger" })
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">@(isEditMode ? "Save" : "Add")</button>
+        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+        @Html.ValidationSummary(null, new { @class = "alert-danger", style = "margin-top: 15px; padding: 10px 0;" });
+}
     </div>
 </div>

@@ -15,17 +15,20 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Name)
             @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
         </div>
 
         //City
         <div class="form-group">
             @Html.LabelFor(m => m.City)
             @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.City, null, new { @class = "text-danger" })
         </div>
         //State
         <div class="form-group">
             @Html.LabelFor(m => m.State)
             @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.State, null, new { @class = "text-danger" })
         </div>
  
 

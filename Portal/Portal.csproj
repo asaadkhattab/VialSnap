@@ -164,13 +164,17 @@
     <Compile Include="Migrations\201803220301422_MedicationAndPatients.Designer.cs">
       <DependentUpon>201803220301422_MedicationAndPatients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803241802546_ControlledSubstances.cs" />
-    <Compile Include="Migrations\201803241802546_ControlledSubstances.Designer.cs">
-      <DependentUpon>201803241802546_ControlledSubstances.cs</DependentUpon>
+    <Compile Include="Migrations\201803242114173_RequiredFieldPharmacy.cs" />
+    <Compile Include="Migrations\201803242114173_RequiredFieldPharmacy.Designer.cs">
+      <DependentUpon>201803242114173_RequiredFieldPharmacy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803242044224_ControlledSubstances1.cs" />
-    <Compile Include="Migrations\201803242044224_ControlledSubstances1.Designer.cs">
-      <DependentUpon>201803242044224_ControlledSubstances1.cs</DependentUpon>
+    <Compile Include="Migrations\201803272303113_test.cs" />
+    <Compile Include="Migrations\201803272303113_test.Designer.cs">
+      <DependentUpon>201803272303113_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803272304099_ghj.cs" />
+    <Compile Include="Migrations\201803272304099_ghj.Designer.cs">
+      <DependentUpon>201803272304099_ghj.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MedControlledSubstance.cs" />
@@ -254,11 +258,14 @@
     <EmbeddedResource Include="Migrations\201803220301422_MedicationAndPatients.resx">
       <DependentUpon>201803220301422_MedicationAndPatients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803241802546_ControlledSubstances.resx">
-      <DependentUpon>201803241802546_ControlledSubstances.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803242114173_RequiredFieldPharmacy.resx">
+      <DependentUpon>201803242114173_RequiredFieldPharmacy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803242044224_ControlledSubstances1.resx">
-      <DependentUpon>201803242044224_ControlledSubstances1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803272303113_test.resx">
+      <DependentUpon>201803272303113_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803272304099_ghj.resx">
+      <DependentUpon>201803272304099_ghj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

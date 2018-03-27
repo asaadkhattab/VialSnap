@@ -19,10 +19,10 @@
         <tr>
             <td>@Model.Pharmacies[i].PharmacyInfo</td>
             <td>
-                @Html.ActionLink("Detail", "PharmacyDetail", new { id = Model.Pharmacies[i].PharmacyId })
-                | @Html.ActionLink("Edit", "PharmacyEdit", new { id = Model.Pharmacies[i].PharmacyId })
-                | @Html.ActionLink("Controlled Substances", "ManageControlledSubstances", new { id = Model.Pharmacies[i].PharmacyId })
-                | <a data-toggle="modal" href="@("#deletePharmacyModal" + i)">Delete</a>
+                @Html.ActionLink("Detail", "PharmacyDetail", new { id = Model.Pharmacies[i].PharmacyId }, new { @class = "btn btn-success btn-sm" })
+                @Html.ActionLink("Edit", "PharmacyEdit", new { id = Model.Pharmacies[i].PharmacyId }, new { @class = "btn btn-primary btn-sm" })
+                @Html.ActionLink("Controlled Substances", "ManageControlledSubstances", new { id = Model.Pharmacies[i].PharmacyId }, new { @class = "btn btn-warning btn-sm" })
+                <a class="btn btn-danger btn-sm" data-toggle="modal" href="@("#deletePharmacyModal" + i)">Delete</a>
                 <div class="modal fade" id="@("deletePharmacyModal" + i)" tabindex="-1" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -54,5 +54,5 @@
     <label>Total Pharmacies:</label> @Model.TotalPharmacies
 </div>
 <div class="col-sm-12">
-    @Html.ActionLink("Add Pharmacy", "PharmacyAdd", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Add Pharmacy", "PharmacyAdd", null, new { @class = "glyphicon-plus btn btn-primary btn-lg btn-block" })
 </div>

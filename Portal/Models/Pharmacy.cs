@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 
 namespace Portal.Models
@@ -14,12 +14,15 @@ namespace Portal.Models
 
         public int PharmacyId { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
+        public string City { get; set; }
+
+        [Required]
         public string State { get; set; }
 
-        public string City { get; set; }
-        
         public virtual ICollection<MedControlledSubstance> MedControlledSubstances { get; set; }
     }
 }

@@ -65,6 +65,11 @@ namespace Portal.Controllers
         [HttpPost]
         public ActionResult AddPharmacy(PharmacyViewModel pharmacyViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddEditPharmacy", pharmacyViewModel);
+            }
+
             using (var portalContext = new PortalContext())
             {
                 var pharmacy = new Pharmacy
@@ -106,6 +111,11 @@ namespace Portal.Controllers
         [HttpPost]
         public ActionResult EditPharmacy(PharmacyViewModel pharmacyViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddEditPharmacy", pharmacyViewModel);
+            }
+
             using (var portalContext = new PortalContext())
             {
                 var pharmacy = portalContext.Pharmacies.SingleOrDefault(p => p.PharmacyId == pharmacyViewModel.PharmacyId);

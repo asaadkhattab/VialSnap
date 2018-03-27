@@ -20,9 +20,9 @@
             <tr>
                 <td>@Model.Patients[i].FirstName</td>
                 <td>
-                    @Html.ActionLink("Detail", "PatientDetail", new { id = Model.Patients[i].PatientId })
-                    | @Html.ActionLink("Edit", "PatientEdit", new { id = Model.Patients[i].PatientId })
-                    | <a data-toggle="modal" href="@("#deletePatientModal" + i)">Delete</a>
+                    @Html.ActionLink("Detail", "PatientDetail", new { id = Model.Patients[i].PatientId }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Edit", "PatientEdit", new { id = Model.Patients[i].PatientId }, new { @class = "btn btn-success btn-sm" })
+                    <a class = "btn btn-warning btn-sm" data-toggle="modal" href="@("#deletePatientModal" + i)">Delete</a>
                     <div class="modal fade" id="@("deletePatientModal" + i)" tabindex="-1" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">

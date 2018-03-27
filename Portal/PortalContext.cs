@@ -15,20 +15,11 @@ namespace Portal
 
         public virtual DbSet<Pharmacy> Pharmacies { get; set; }
 
-        public virtual DbSet<Patient> Patients { get; set; }
-
         public virtual DbSet<MedControlledSubstance> MedControlledSubstances { get; set; }
 
         public virtual DbSet<Medication> Medications { get; set; }
 
-        
-
+        public virtual DbSet<Patient> Patients { get; set; }
 
     }
-
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
 }

@@ -7,13 +7,13 @@ namespace Portal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ControlledSubstances : IMigrationMetadata
+    public sealed partial class RequiredFieldPharmacy : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ControlledSubstances));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RequiredFieldPharmacy));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803241802546_ControlledSubstances"; }
+            get { return "201803242114173_RequiredFieldPharmacy"; }
         }
         
         string IMigrationMetadata.Source
