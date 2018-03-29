@@ -23,15 +23,10 @@ namespace Portal.Models
         public int AccountBalance { get; set; }
 
         
-
+        //Medication
         public int MedicationId { get; set; }
-
         public virtual Medication Medication { get; set; }
 
-
-
-        public int PharmacyId { get; set; }
-
-  
+ 
     }
 }

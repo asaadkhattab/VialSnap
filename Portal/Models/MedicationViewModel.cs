@@ -12,7 +12,6 @@ namespace Portal.Models
         [Required(ErrorMessage = "Enter the Medication please.")]
         public int? MedicationId { get; set; }
 
-
         public string Name { get; set; }
     }
 }

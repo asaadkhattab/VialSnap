@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace Portal.Models
@@ -25,8 +21,13 @@ namespace Portal.Models
 
         public int AccountBalance { get; set; }
 
+        public string FullName => FirstName + " " + LastName;
+
+ 
         public MedicationViewModel Medication { get; set; }
 
-        public MedicationViewModel Pharmacy { get; set; }
+        public PharmacyViewModel Pharmacy { get; set; }
+
+        public InsuranceViewModel Insurance { get; set; }
     }
 }

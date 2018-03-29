@@ -156,27 +156,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803220134359_InitialMigration.cs" />
-    <Compile Include="Migrations\201803220134359_InitialMigration.Designer.cs">
-      <DependentUpon>201803220134359_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803220301422_MedicationAndPatients.cs" />
-    <Compile Include="Migrations\201803220301422_MedicationAndPatients.Designer.cs">
-      <DependentUpon>201803220301422_MedicationAndPatients.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803242114173_RequiredFieldPharmacy.cs" />
-    <Compile Include="Migrations\201803242114173_RequiredFieldPharmacy.Designer.cs">
-      <DependentUpon>201803242114173_RequiredFieldPharmacy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803272303113_test.cs" />
-    <Compile Include="Migrations\201803272303113_test.Designer.cs">
-      <DependentUpon>201803272303113_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803272304099_ghj.cs" />
-    <Compile Include="Migrations\201803272304099_ghj.Designer.cs">
-      <DependentUpon>201803272304099_ghj.cs</DependentUpon>
+    <Compile Include="Migrations\201803282312136_Initial-Migration.cs" />
+    <Compile Include="Migrations\201803282312136_Initial-Migration.Designer.cs">
+      <DependentUpon>201803282312136_Initial-Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Insurance.cs" />
+    <Compile Include="Models\InsuranceViewModel.cs" />
     <Compile Include="Models\MedControlledSubstance.cs" />
     <Compile Include="Models\MedControlledSubstanceViewModel.cs" />
     <Compile Include="Models\Medication.cs" />
@@ -252,20 +238,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803220134359_InitialMigration.resx">
-      <DependentUpon>201803220134359_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803220301422_MedicationAndPatients.resx">
-      <DependentUpon>201803220301422_MedicationAndPatients.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803242114173_RequiredFieldPharmacy.resx">
-      <DependentUpon>201803242114173_RequiredFieldPharmacy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803272303113_test.resx">
-      <DependentUpon>201803272303113_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803272304099_ghj.resx">
-      <DependentUpon>201803272304099_ghj.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803282312136_Initial-Migration.resx">
+      <DependentUpon>201803282312136_Initial-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

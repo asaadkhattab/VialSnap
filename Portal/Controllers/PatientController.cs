@@ -23,12 +23,16 @@ namespace Portal.Controllers
                         LastName = pat.LastName,
                         Suffix = pat.Suffix,
                         AccountBalance = pat.AccountBalance,
+
                         Medication = new MedicationViewModel
                         {
                             MedicationId = pat.MedicationId,
                             Name = pat.FirstName
-                        }
-                        
+                        },
+
+ 
+
+
                     }).ToList()
                 };
 
@@ -55,11 +59,16 @@ namespace Portal.Controllers
                         LastName = patient.LastName,
                         Suffix = patient.Suffix,
                         AccountBalance = patient.AccountBalance,
+ 
+
                         Medication = new MedicationViewModel
                         {
                             MedicationId = patient.MedicationId,
                             Name = patient.Medication.Name
-                        }
+                        },
+ 
+
+                        
                     };
 
                     return View(patientViewModel);
@@ -84,6 +93,8 @@ namespace Portal.Controllers
                     Value = m.MedicationId.ToString(),
                     Text = m.Name
                 }).ToList();
+
+ 
             }
 
             var patientViewModel = new PatientViewModel();
@@ -103,11 +114,9 @@ namespace Portal.Controllers
                         Value = m.MedicationId.ToString(),
                         Text = m.Name
                     }).ToList();
-                    ViewBag.Pharmacies = portalContext.Pharmacies.Select(m => new SelectListItem
-                    {
-                        Value = m.PharmacyId.ToString(),
-                        Text = m.Name
-                    }).ToList();
+
+ 
+
                     return View("AddEditPatient", patientViewModel);
                 }
             }
@@ -123,7 +132,8 @@ namespace Portal.Controllers
                     Suffix = patientViewModel.Suffix,
                     AccountBalance = patientViewModel.AccountBalance,
 
-                    MedicationId = patientViewModel.Medication.MedicationId.Value
+                    MedicationId = patientViewModel.Medication.MedicationId.Value,
+ 
                 };
 
                 portalContext.Patients.Add(patient);
@@ -143,15 +153,10 @@ namespace Portal.Controllers
                     Text = m.Name
                 }).ToList();
 
-                ViewBag.Pharmacies = portalContext.Pharmacies.Select(m => new SelectListItem
-                {
-                    Value = m.PharmacyId.ToString(),
-                    Text = m.Name
-                }).ToList();
-
+         
                 var patient = portalContext.Patients.SingleOrDefault(p => p.PatientId == id);
 
-                patient.PharmacyId = patient.PharmacyId == 0 ? 25 : patient.PharmacyId;
+                 
                 if (patient != null)
                 {
                     var patientViewModel = new PatientViewModel
@@ -169,12 +174,9 @@ namespace Portal.Controllers
                             MedicationId = patient.MedicationId,
                             Name = patient.Medication.Name
                         },
-
-                        Pharmacy = new MedicationViewModel
-                        {
-                            MedicationId = patient.PharmacyId,
-                            Name = portalContext.Pharmacies.FirstOrDefault(pat => pat.PharmacyId == patient.PharmacyId)?.Name ?? ""
-                        }
+ 
+                
+            
                     };
 
                     return View("AddEditPatient", patientViewModel);
@@ -191,21 +193,22 @@ namespace Portal.Controllers
             {
                 using (var portalContext = new PortalContext())
                 {
-                    ViewBag.Medications = portalContext.Medications.Select(m => new SelectListItem
-                    {
-                        Value = m.MedicationId.ToString(),
-                        Text = m.Name
-                    }).ToList();
-
                     ViewBag.Pharmacies = portalContext.Pharmacies.Select(m => new SelectListItem
                     {
                         Value = m.PharmacyId.ToString(),
                         Text = m.Name
                     }).ToList();
 
+                    ViewBag.Medications = portalContext.Medications.Select(m => new SelectListItem
+                    {
+                        Value = m.MedicationId.ToString(),
+                        Text = m.Name
+                    }).ToList();
+ 
                     return View("AddEditPatient", patientViewModel);
                 }
             }
+
             using (var portalContext = new PortalContext())
             {
                 var patient = portalContext.Patients.SingleOrDefault(pat => pat.PatientId == patientViewModel.PatientId);
@@ -220,7 +223,7 @@ namespace Portal.Controllers
                     patient.AccountBalance = patientViewModel.AccountBalance;
 
                     patient.MedicationId = patientViewModel.Medication.MedicationId.Value;
-                    patient.PharmacyId = patientViewModel.Pharmacy.MedicationId.Value;
+                     
                     portalContext.SaveChanges();
 
                     return RedirectToAction("Index");

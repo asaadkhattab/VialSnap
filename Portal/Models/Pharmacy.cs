@@ -24,5 +24,6 @@ namespace Portal.Models
         public string State { get; set; }
 
         public virtual ICollection<MedControlledSubstance> MedControlledSubstances { get; set; }
+ 
     }
 }
