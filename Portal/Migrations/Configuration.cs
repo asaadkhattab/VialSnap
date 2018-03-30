@@ -27,7 +27,7 @@ namespace Portal.Migrations
                 new Pharmacy { PharmacyId = 7, Name = "SuperPharm", City = "Dayton", State = "PA" },
                 new Pharmacy { PharmacyId = 8, Name = "WatsonPharm", City = "San Fransisco", State = "MD" },
                 new Pharmacy { PharmacyId = 9, Name = "Drug Imporium", City = "Chicago", State = "IN" },
-                new Pharmacy { PharmacyId = 8, Name = "Good Neighbor Pharmacy", City = "Honolulu", State = "HI" }
+                new Pharmacy { PharmacyId = 10, Name = "Good Neighbor Pharmacy", City = "Honolulu", State = "HI" }
                 );
 
             context.Medications.AddOrUpdate(

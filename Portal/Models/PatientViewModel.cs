@@ -26,8 +26,7 @@ namespace Portal.Models
  
         public MedicationViewModel Medication { get; set; }
 
-        public PharmacyViewModel Pharmacy { get; set; }
-
-        public InsuranceViewModel Insurance { get; set; }
+ 
+ 
     }
 }

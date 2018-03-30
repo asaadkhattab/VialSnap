@@ -15,15 +15,11 @@ namespace Portal.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "About VialSnap";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Contact Us";
-
             return View();
         }
     }

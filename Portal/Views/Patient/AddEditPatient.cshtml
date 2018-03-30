@@ -14,14 +14,14 @@
         @Html.HiddenFor(m => m.PatientId)
 
         //PREFIX
-        <div class="form-group">
+        <div class="form-group col-4">
             @Html.LabelFor(m => m.Prefix)
             @Html.TextBoxFor(m => m.Prefix, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Prefix, null, new { @class = "text-danger" })
         </div>
 
         //FIRST NAME
-        <div class="form-group">
+        <div class="form-group col-8">
             @Html.LabelFor(m => m.FirstName)
             @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text-danger" })
