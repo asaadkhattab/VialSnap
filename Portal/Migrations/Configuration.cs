@@ -10,8 +10,8 @@ namespace Portal.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = false;
+            //AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(PortalContext context)
@@ -38,21 +38,6 @@ namespace Portal.Migrations
                 new Medication { MedicationId = 4, Name = "Nexium" },
                 new Medication { MedicationId = 5, Name = "Flonase" }
                 );
-
-
-            //context.Insurances.AddOrUpdate(
-            //    i => i.InsuranceId,
-            //    new Insurance { InsuranceId = 1, Name = "Atena Better Health" },
-            //    new Insurance { InsuranceId = 2, Name = "Anthem" },
-            //    new Insurance { InsuranceId = 3, Name = "BlueCross BlueShield" },
-            //    new Insurance { InsuranceId = 4, Name = "CareSource" },
-            //    new Insurance { InsuranceId = 5, Name = "Medicaid" },
-            //    new Insurance { InsuranceId = 6, Name = "Passport" },
-            //    new Insurance { InsuranceId = 7, Name = "Bluegrass Family Health" },
-            //    new Insurance { InsuranceId = 8, Name = "Wellcare Health Plans Inc" },
-            //    new Insurance { InsuranceId = 9, Name = "Humana" }
-
-            //    );
 
             context.SaveChanges();
 

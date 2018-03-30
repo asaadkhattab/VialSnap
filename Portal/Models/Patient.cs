@@ -18,7 +18,7 @@ namespace Portal.Models
 
         public string Suffix { get; set; }
 
-
+        public string Insurance { get; set; }
 
         public int AccountBalance { get; set; }
 
