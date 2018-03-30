@@ -17,6 +17,6 @@ namespace Portal
         public virtual DbSet<Medication> Medications { get; set; }
 
         public virtual DbSet<Patient> Patients { get; set; }
- 
+
     }
 }

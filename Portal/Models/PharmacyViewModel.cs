@@ -26,8 +26,7 @@ namespace Portal.Models
         [DisplayName("State: ")]
         [Required(ErrorMessage = "The state of the pharmacy is required.")]
         public string State { get; set; }
-
-        [DisplayName("Pharmacy Info: ")]
+ 
         public string PharmacyInfo => Name + " at " + City + "," + " " + State; 
 
         public List<MedControlledSubstanceViewModel> MedControlledSubstances { get; set; }

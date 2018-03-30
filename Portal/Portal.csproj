@@ -154,9 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803282312136_Initial-Migration.cs" />
-    <Compile Include="Migrations\201803282312136_Initial-Migration.Designer.cs">
-      <DependentUpon>201803282312136_Initial-Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201803300647168_Initial.cs" />
+    <Compile Include="Migrations\201803300647168_Initial.Designer.cs">
+      <DependentUpon>201803300647168_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MedControlledSubstance.cs" />
@@ -265,15 +265,15 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803282312136_Initial-Migration.resx">
-      <DependentUpon>201803282312136_Initial-Migration.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803300647168_Initial.resx">
+      <DependentUpon>201803300647168_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -43,10 +43,10 @@ namespace Portal.Migrations
 
             context.Patients.AddOrUpdate(
                   pat => pat.PatientId,
-                  new Patient { PatientId = 1, Prefix = "Mr", FirstName = "Asaad", MiddleName = "Y", LastName = "Khattab", Suffix = "III", AccountBalance = 99, MedicationId = 4},
-                  new Patient { PatientId = 2, Prefix = "Mrs", FirstName = "Emily", MiddleName = "N", LastName = "Green", Suffix = "PhD", AccountBalance = 9, MedicationId = 1},
-                  new Patient { PatientId = 3, Prefix = "Mr", FirstName = "Sam", MiddleName = "Y", LastName = "Farthing", Suffix = "Sr.", AccountBalance = 134, MedicationId = 3},
-                  new Patient { PatientId = 4, Prefix = "Mr", FirstName = "Avram", MiddleName = "C", LastName = "Hale", Suffix = "I", AccountBalance = 23, MedicationId = 1},
+                  new Patient { PatientId = 1, Prefix = "Mr", FirstName = "Asaad", MiddleName = "Y", LastName = "Khattab", Suffix = "III", AccountBalance = 99, MedicationId = 4 },
+                  new Patient { PatientId = 2, Prefix = "Mrs", FirstName = "Emily", MiddleName = "N", LastName = "Green", Suffix = "PhD", AccountBalance = 9, MedicationId = 1 },
+                  new Patient { PatientId = 3, Prefix = "Mr", FirstName = "Sam", MiddleName = "Y", LastName = "Farthing", Suffix = "Sr.", AccountBalance = 134, MedicationId = 3 },
+                  new Patient { PatientId = 4, Prefix = "Mr", FirstName = "Avram", MiddleName = "C", LastName = "Hale", Suffix = "I", AccountBalance = 23, MedicationId = 1 },
                   new Patient { PatientId = 5, Prefix = "Mrs", FirstName = "Linda", MiddleName = "G", LastName = "Croft", Suffix = "IV", AccountBalance = 50, MedicationId = 2 }
                   );
 
