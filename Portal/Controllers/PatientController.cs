@@ -193,12 +193,7 @@ namespace Portal.Controllers
             {
                 using (var portalContext = new PortalContext())
                 {
-                    ViewBag.Pharmacies = portalContext.Pharmacies.Select(m => new SelectListItem
-                    {
-                        Value = m.PharmacyId.ToString(),
-                        Text = m.Name
-                    }).ToList();
-
+  
                     ViewBag.Medications = portalContext.Medications.Select(m => new SelectListItem
                     {
                         Value = m.MedicationId.ToString(),

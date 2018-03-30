@@ -1,5 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+ 
+
 
 namespace Portal.Models
 {
@@ -21,6 +23,7 @@ namespace Portal.Models
 
         public int AccountBalance { get; set; }
 
+   
         public string FullName => FirstName + " " + LastName;
 
  

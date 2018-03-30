@@ -19,10 +19,9 @@ namespace Portal.Models
         public string Suffix { get; set; }
 
 
-        
+
         public int AccountBalance { get; set; }
 
-        
         //Medication
         public int MedicationId { get; set; }
         public virtual Medication Medication { get; set; }

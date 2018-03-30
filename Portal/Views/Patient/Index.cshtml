@@ -10,7 +10,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>Patient Name</th>
             <th></th>
         </tr>
     </thead>
@@ -31,10 +31,10 @@
                                     <input type="hidden" value="@Model.Patients[i].PatientId" name="PatientId" />
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Delete @Model.Patients[i].FirstName</h4>
+                                        <h4 class="modal-title">Delete @Model.Patients[i].FullName</h4>
                                     </div>
                                     <div class="modal-body">
-                                        Are you sure you want to delete @Model.Patients[i].FirstName?
+                                        Are you sure you want to delete @Model.Patients[i].FullName?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Yes</button>

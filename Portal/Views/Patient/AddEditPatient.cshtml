@@ -2,10 +2,10 @@
 
 @{
     var isEditMode = Model.PatientId != null;
-    ViewBag.Title = isEditMode ? "Edit " + Model.FirstName : "Add Patient";
+    ViewBag.Title = isEditMode ? "Edit " + Model.FullName : "Add Patient";
 }
 
-<h2>@Model.FirstName</h2>
+<h2>@Model.FullName</h2>
 
 <div class="row">
     <div class="col-sm-6 col-xs-10">
