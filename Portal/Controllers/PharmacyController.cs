@@ -54,12 +54,12 @@ namespace Portal.Controllers
         }
 
 
-        //        //Add Pharmacy
-        //        public ActionResult PharmacyAdd()
-        //        {
-        //            var pharmacyViewModel = new PharmacyViewModel();
-        //            return View("AddEditPharmacy", pharmacyViewModel);
-        //        }
+        //Add Pharmacy
+        public ActionResult PharmacyAdd()
+        {
+            var pharmacyViewModel = new PharmacyViewModel();
+            return View("AddEditPharmacy", pharmacyViewModel);
+        }
 
 
         [HttpPost]
