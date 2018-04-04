@@ -154,9 +154,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804040429139_Initial.cs" />
-    <Compile Include="Migrations\201804040429139_Initial.Designer.cs">
-      <DependentUpon>201804040429139_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201804041707278_Initial.cs" />
+    <Compile Include="Migrations\201804041707278_Initial.Designer.cs">
+      <DependentUpon>201804041707278_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804041731031_PatientAndMedication.cs" />
+    <Compile Include="Migrations\201804041731031_PatientAndMedication.Designer.cs">
+      <DependentUpon>201804041731031_PatientAndMedication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804041735546_Controlled.cs" />
+    <Compile Include="Migrations\201804041735546_Controlled.Designer.cs">
+      <DependentUpon>201804041735546_Controlled.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MedControlledSubstance.cs" />
@@ -200,6 +208,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -225,7 +234,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -271,8 +282,14 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804040429139_Initial.resx">
-      <DependentUpon>201804040429139_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804041707278_Initial.resx">
+      <DependentUpon>201804041707278_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804041731031_PatientAndMedication.resx">
+      <DependentUpon>201804041731031_PatientAndMedication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804041735546_Controlled.resx">
+      <DependentUpon>201804041735546_Controlled.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,3 +1,4 @@
+//PortalContext.cs
 namespace Portal
 {
     using Portal.Models;
@@ -17,6 +18,5 @@ namespace Portal
         public virtual DbSet<Medication> Medications { get; set; }
 
         public virtual DbSet<Patient> Patients { get; set; }
-
     }
 }

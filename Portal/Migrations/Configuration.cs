@@ -1,3 +1,4 @@
+//Configuration.cs
 namespace Portal.Migrations
 {
     using System;
@@ -10,7 +11,7 @@ namespace Portal.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             //AutomaticMigrationDataLossAllowed = true;
         }
 
@@ -49,14 +50,7 @@ namespace Portal.Migrations
                   new Patient { PatientId = 4, Prefix = "Mr", FirstName = "Avram", MiddleName = "C", LastName = "Hale", Suffix = "I", AccountBalance = 23, MedicationId = 1 },
                   new Patient { PatientId = 5, Prefix = "Mrs", FirstName = "Linda", MiddleName = "G", LastName = "Croft", Suffix = "IV", AccountBalance = 50, MedicationId = 2 }
                   );
-
-            context.MedControlledSubstances.AddOrUpdate(
-                 mcss => new { mcss.PharmacyId, mcss.MedicationId },
-                 new MedControlledSubstance { PharmacyId = 1, MedicationId = 1, Schedule = 1 },
-                 new MedControlledSubstance { PharmacyId = 2, MedicationId = 2, Schedule = 2 },
-                 new MedControlledSubstance { PharmacyId = 3, MedicationId = 1, Schedule = 2 }
-                 );
-
+ 
 
 
 

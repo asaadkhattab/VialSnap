@@ -54,12 +54,12 @@ namespace Portal.Controllers
         }
 
 
-        //Add Pharmacy
-        public ActionResult PharmacyAdd()
-        {
-            var pharmacyViewModel = new PharmacyViewModel();
-            return View("AddEditPharmacy", pharmacyViewModel);
-        }
+        //        //Add Pharmacy
+        //        public ActionResult PharmacyAdd()
+        //        {
+        //            var pharmacyViewModel = new PharmacyViewModel();
+        //            return View("AddEditPharmacy", pharmacyViewModel);
+        //        }
 
 
         [HttpPost]
@@ -180,7 +180,7 @@ namespace Portal.Controllers
 
                     pharmacyViewModel.MedControlledSubstances.Add(new MedControlledSubstanceViewModel
                     {
-                        Medication = new MedicationViewModel { MedicationId = medication.MedicationId, Name = medication.Name},
+                        Medication = new MedicationViewModel { MedicationId = medication.MedicationId, Name = medication.Name },
                         Schedule = currentSchedule ?? -1
                     });
                 }
@@ -225,4 +225,4 @@ namespace Portal.Controllers
             }
         }
     }
-}
+    }
