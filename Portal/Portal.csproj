@@ -154,9 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804040409092_Initial.cs" />
-    <Compile Include="Migrations\201804040409092_Initial.Designer.cs">
-      <DependentUpon>201804040409092_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201804040429139_Initial.cs" />
+    <Compile Include="Migrations\201804040429139_Initial.Designer.cs">
+      <DependentUpon>201804040429139_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MedControlledSubstance.cs" />
@@ -271,8 +271,8 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804040409092_Initial.resx">
-      <DependentUpon>201804040409092_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804040429139_Initial.resx">
+      <DependentUpon>201804040429139_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
