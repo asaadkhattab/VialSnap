@@ -1,4 +1,5 @@
 # VialSnap
+*For some reason it isn't working on VS 2015. I build this app with VS 2017 Community Edition. Maybe you can try changing the version number in Web.Config file.
 ## User-Friendly Pharmaceutical Progressive Web App
 ### http://www.vialsnap.com
 This app helps pharmacists and technicians manage their patient's perscriptions, organize the drug inventory, and make payments. 
